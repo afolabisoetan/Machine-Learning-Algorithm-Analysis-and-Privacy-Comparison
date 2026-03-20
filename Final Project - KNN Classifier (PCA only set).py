@@ -120,7 +120,7 @@ secure_scores = cross_val_score(pipeline, x, y, scoring='recall', cv=cv, n_jobs=
 
 # saves score values into a CSV
 results_df = pd.DataFrame({ 'Iteration': np.arange(1, len(secure_scores)+1), 'PCA_Only_Dataset_Recall': secure_scores})
-results_df.to_csv('fraud_detection_results_secure.csv', index=False)
+results_df.to_csv('knn_fraud_detection_results_secure.csv', index=False)
 
 
 # Training on the 80/20 split for the final classification report
