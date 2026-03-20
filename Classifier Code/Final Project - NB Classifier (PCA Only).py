@@ -72,9 +72,9 @@ pipeline = Pipeline([
 # Running cross-validation for the secure scores distribution
 secure_scores = cross_val_score(pipeline, x, y, scoring='recall', cv=cv, n_jobs=-1)
 
-# saves score values into a CSV
-results_df = pd.DataFrame({ 'Iteration': np.arange(1, len(secure_scores)+1), 'PCA_Only_Dataset_Recall': secure_scores})
-results_df.to_csv('nb_fraud_detection_results_secure.csv', index=False)
+# saves score values into a CSV (can be commented out when the CSV is already made)
+#results_df = pd.DataFrame({ 'Iteration': np.arange(1, len(secure_scores)+1), 'PCA_Only_Dataset_Recall': secure_scores})
+#results_df.to_csv('NB_Recall_Values_PCA_Only_Set.csv', index=False)
 
 # Training on the 80/20 split for the final classification report
 pipeline.fit(x_train, y_train)

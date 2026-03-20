@@ -46,9 +46,9 @@ pipeline_svc = Pipeline([
 # Running cross-validation
 svc_scores = cross_val_score(pipeline_svc, x, y, scoring='recall', cv=cv, n_jobs=-1)
 
-# Saves scores
-results_df = pd.DataFrame({'Iteration': np.arange(1, len(svc_scores)+1), 'PCA_Only_Dataset_Recall': svc_scores})
-results_df.to_csv('svc_fraud_detection_results_secure.csv', index=False)
+# saves score values into a CSV (can be commented out when the CSV is already made)
+#results_df = pd.DataFrame({'Iteration': np.arange(1, len(svc_scores)+1), 'PCA_Only_Dataset_Recall': svc_scores})
+#results_df.to_csv('Linear_SVC_Recall_Values_PCA_Only_Set.csv', index=False)
 
 # Final report on 80/20 split
 pipeline_svc.fit(x_train, y_train)
