@@ -93,6 +93,7 @@ print()
 print("=======================================================================================")
 
 # Boxplot of the 30 recall scores to visualize stability
+sns.set_context("paper", font_scale=3.0)
 plt.figure(figsize=(8, 5))
 sns.boxplot(x=secure_scores)
 plt.title('Distribution of Recall Scores - Naive Bayes (PCA Only Dataset)')

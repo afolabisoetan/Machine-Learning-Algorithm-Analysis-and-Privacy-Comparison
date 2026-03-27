@@ -59,7 +59,9 @@ print(classification_report(y_test, y_pred))
 print(f"Mean Cross Validation Recall: {svc_scores.mean():.4f}")
 
 # Visualizing results
+sns.set_context("paper", font_scale=3.0)
 plt.figure(figsize=(8, 5))
 sns.boxplot(x=svc_scores)
 plt.title('Recall Scores - Linear SVC (PCA Only Dataset)')
+plt.xlabel('Recall Score')
 plt.show()
